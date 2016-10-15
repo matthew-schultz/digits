@@ -1,3 +1,13 @@
 body {
-  padding-top: 61px;  /* Move body of page below navbar. */
+  /*padding-top: 61px;  !* Move body of page below navbar. *!*/
+}
+
+div.ui.borderless.inverted.menu {
+  margin-top: 0;
+  border-radius: 0px;
+  background-color: #224309;
+}
+
+a#login-sign-in-link.login-link-text {
+  color: #ffffff;
 }
