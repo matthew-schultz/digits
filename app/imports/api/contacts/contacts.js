@@ -25,7 +25,7 @@ export const ContactsSchema = new SimpleSchema({
     label: 'Address',
     type: String,
     optional: false,
-    max: 20,
+    max: 40,
   },
   phone: {
     label: 'Phone',
@@ -37,7 +37,7 @@ export const ContactsSchema = new SimpleSchema({
     label: 'Email',
     type: String,
     optional: false,
-    max: 20,
+    max: 40,
   },
 });
 
