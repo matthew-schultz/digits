@@ -78,5 +78,41 @@ Template.Edit_Contact_Page.events({
       instance.messageFlags.set(displayErrorMessages, true);
     }
   },
+
+  'click .delete'(event, instance) {
+    event.preventDefault();
+    // Get name (text field)
+
+    // Contacts.remove(event.target._id.value);
+
+    // Contacts.remove( { event.target._id.value } );
+    // Contacts.remove({_id: event.target._id.value });
+
+    Contacts.remove(FlowRouter.getParam('_id'));
+
+    FlowRouter.go('Home_Page');
+
+    // const first = event.target.first.value;
+    // const last = event.target.last.value;
+    // const address = event.target.address.value;
+    // const phone = event.target.phone.value;
+    // const email = event.target.email.value;
+    //
+    // const updatedContact = { first, last, address, phone, email };
+    // // Clear out any old validation errors.
+    // instance.context.resetValidation();
+    // // Invoke clean so that updatedContact reflects what will be inserted.
+    // ContactsSchema.clean(updatedContact);
+    // // Determine validity.
+    // instance.context.validate(updatedContact);
+    // if (instance.context.isValid()) {
+    //   // Contacts.insert(updatedContact);
+    //   Contacts.update(FlowRouter.getParam('_id'), { $set: updatedContact });
+    //   instance.messageFlags.set(displayErrorMessages, false);
+    //   FlowRouter.go('Home_Page');
+    // } else {
+    //   instance.messageFlags.set(displayErrorMessages, true);
+    // }
+  },
 });
 
