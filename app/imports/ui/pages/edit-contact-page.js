@@ -88,7 +88,12 @@ Template.Edit_Contact_Page.events({
     // Contacts.remove( { event.target._id.value } );
     // Contacts.remove({_id: event.target._id.value });
 
-    Contacts.remove(FlowRouter.getParam('_id'));
+    const removeConfirmation = window.confirm('Do you really want to delete this entry?');
+
+    if (removeConfirmation === true) {
+      Contacts.remove(FlowRouter.getParam('_id'));
+    }
+
 
     FlowRouter.go('Home_Page');
 
