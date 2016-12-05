@@ -1,5 +1,5 @@
-import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import {Mongo} from 'meteor/mongo';
+import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 
 /* eslint-disable object-shorthand */
 
@@ -38,6 +38,10 @@ export const ContactsSchema = new SimpleSchema({
     type: String,
     optional: false,
     max: 40,
+  },
+  owner: {
+    label: 'owner',
+    type: String,
   },
 });
 

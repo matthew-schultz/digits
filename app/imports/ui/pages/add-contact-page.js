@@ -3,6 +3,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 import { Contacts, ContactsSchema } from '../../api/contacts/contacts.js';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
 
 /* eslint-disable no-param-reassign */
 
@@ -42,8 +43,9 @@ Template.Add_Contact_Page.events({
     const address = event.target.address.value;
     const phone = event.target.phone.value;
     const email = event.target.email.value;
+    const owner = Meteor.userId();
 
-    const newContact = { first, last, address, phone, email };
+    const newContact = { first, last, address, phone, email, owner };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newContact reflects what will be inserted.
